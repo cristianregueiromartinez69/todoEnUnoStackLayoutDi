@@ -20,6 +20,8 @@ class boton_color(QHBoxLayout):
         self.button_cambio_blanco = QPushButton("white")
         self.button_formulario = QPushButton("Formulario")
 
+
+
         self.addWidget(self.button_cambio_rojo)
         self.addWidget(self.button_cambio_azul)
         self.addWidget(self.button_cambio_naranja)
@@ -28,3 +30,6 @@ class boton_color(QHBoxLayout):
         self.addWidget(self.button_cambio_gris)
         self.addWidget(self.button_cambio_blanco)
         self.addWidget(self.button_formulario)
+
+
+

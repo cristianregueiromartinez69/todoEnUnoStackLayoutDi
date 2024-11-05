@@ -26,6 +26,15 @@ class MainWindow(QMainWindow):
         botones_widget = Botones()
         boton_color_cambio = boton_color()
 
+        boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
+        boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
+        boton_color_cambio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
+        boton_color_cambio.button_cambio_amarillo.clicked.connect(self.cambioAmarillo)
+        boton_color_cambio.button_cambio_rosa.clicked.connect(self.cambioRosa)
+        boton_color_cambio.button_cambio_gris.clicked.connect(self.cambioGris)
+        boton_color_cambio.button_cambio_blanco.clicked.connect(self.cambioBlanco)
+        boton_color_cambio.button_formulario.clicked.connect(self.cambioForm)
+
         caja_Formulario.addLayout(datos_widget)
         caja_Formulario.addLayout(botones_widget)
 
@@ -57,6 +66,30 @@ class MainWindow(QMainWindow):
         container.setLayout(caja_central)
         self.setCentralWidget(container)
         self.show()
+
+    def cambioRojo(self):
+        self.stack_layout.setCurrentIndex(0)
+
+    def cambioAzul(self):
+        self.stack_layout.setCurrentIndex(1)
+
+    def cambioNaranja(self):
+        self.stack_layout.setCurrentIndex(2)
+
+    def cambioAmarillo(self):
+        self.stack_layout.setCurrentIndex(3)
+
+    def cambioRosa(self):
+        self.stack_layout.setCurrentIndex(4)
+
+    def cambioGris(self):
+        self.stack_layout.setCurrentIndex(5)
+
+    def cambioBlanco(self):
+        self.stack_layout.setCurrentIndex(6)
+
+    def cambioForm(self):
+        self.stack_layout.setCurrentIndex(7)
 
 
 
