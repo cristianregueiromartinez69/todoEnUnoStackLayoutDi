@@ -9,6 +9,7 @@ from CajaColor import CajaColor
 from DatosFormulario import DatosWidget
 from BotonesFormulario import Botones
 from Botones_colores import boton_color
+from RadioButtons import BotonRadio
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -26,6 +27,8 @@ class MainWindow(QMainWindow):
         botones_widget = Botones()
         boton_color_cambio = boton_color()
 
+        boton_color_cambio_radio = BotonRadio()
+
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
         boton_color_cambio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
@@ -38,6 +41,14 @@ class MainWindow(QMainWindow):
         caja_Formulario.addLayout(datos_widget)
         caja_Formulario.addLayout(botones_widget)
 
+        boton_color_cambio_radio.button_cambio_rojo.clicked.connect(self.cambioRojo)
+        boton_color_cambio_radio.button_cambio_azul.clicked.connect(self.cambioAzul)
+        boton_color_cambio_radio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
+        boton_color_cambio_radio.button_cambio_amarillo.clicked.connect(self.cambioAmarillo)
+        boton_color_cambio_radio.button_cambio_rosa.clicked.connect(self.cambioRosa)
+        boton_color_cambio_radio.button_cambio_gris.clicked.connect(self.cambioGris)
+        boton_color_cambio_radio.button_cambio_blanco.clicked.connect(self.cambioBlanco)
+        boton_color_cambio_radio.button_formulario.clicked.connect(self.cambioForm)
 
         self.stack_layout = QStackedLayout()
         self.stack_layout.addWidget(CajaColor("red"))
@@ -56,6 +67,7 @@ class MainWindow(QMainWindow):
 
         caja_central.addLayout(self.stack_layout)
         caja_central.addLayout(boton_color_cambio)
+        caja_central.addLayout(boton_color_cambio_radio)
 
 
 
