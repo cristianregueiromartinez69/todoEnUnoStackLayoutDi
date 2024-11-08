@@ -42,6 +42,7 @@ class MainWindow(QMainWindow):
         caja_Formulario.addLayout(botones_widget)
 
         boton_color_cambio_radio.button_cambio_rojo.clicked.connect(self.cambioRojo)
+        boton_color_cambio_radio.button_cambio_rojo.setChecked(True) #Metodo para hacer que un boton esté presionando en el momento de iniciar la aplicación
         boton_color_cambio_radio.button_cambio_azul.clicked.connect(self.cambioAzul)
         boton_color_cambio_radio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
         boton_color_cambio_radio.button_cambio_amarillo.clicked.connect(self.cambioAmarillo)
@@ -72,7 +73,7 @@ class MainWindow(QMainWindow):
 
 
 
-        self.stack_layout.setCurrentIndex(1)
+        self.stack_layout.setCurrentIndex(0)
 
         container = QWidget()
         container.setLayout(caja_central)

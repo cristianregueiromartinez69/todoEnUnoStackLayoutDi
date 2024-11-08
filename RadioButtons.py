@@ -28,3 +28,9 @@ class BotonRadio(QHBoxLayout):
         self.addWidget(self.button_cambio_gris)
         self.addWidget(self.button_cambio_blanco)
         self.addWidget(self.button_formulario)
+
+'''
+La sintaxis es la misma que la de QPushButton, solo que es circular
+Si tenemos uno seleccionado, se deseleccionan los demás
+Para conectarlo, funcionan como los QPushButton 
+'''
