@@ -1,8 +1,7 @@
 import sys
-import random
 
 from PyQt6.QtGui import QPalette, QColor
-from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QPushButton, QWidget,
+from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,
                               QStackedLayout)
 
 from CajaColor import CajaColor
@@ -21,7 +20,7 @@ class MainWindow(QMainWindow):
         self.setPalette(paleta)
 
         caja_central = QVBoxLayout()
-        caja_Formulario = QVBoxLayout()
+        caja_formulario = QVBoxLayout()
 
         datos_widget = DatosWidget()
         botones_widget = Botones()
@@ -38,8 +37,8 @@ class MainWindow(QMainWindow):
         boton_color_cambio.button_cambio_blanco.clicked.connect(self.cambioBlanco)
         boton_color_cambio.button_formulario.clicked.connect(self.cambioForm)
 
-        caja_Formulario.addLayout(datos_widget)
-        caja_Formulario.addLayout(botones_widget)
+        caja_formulario.addLayout(datos_widget)
+        caja_formulario.addLayout(botones_widget)
 
         boton_color_cambio_radio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio_radio.button_cambio_rojo.setChecked(True) #Metodo para hacer que un boton esté presionando en el momento de iniciar la aplicación
@@ -59,12 +58,12 @@ class MainWindow(QMainWindow):
         self.stack_layout.addWidget(CajaColor("pink"))
         self.stack_layout.addWidget(CajaColor("gray"))
         self.stack_layout.addWidget(CajaColor("white"))
-        containerFormulario = QWidget()
+        container_formulario = QWidget()
 
 
 
-        containerFormulario.setLayout(caja_Formulario)
-        self.stack_layout.addWidget(containerFormulario)
+        container_formulario.setLayout(caja_formulario)
+        self.stack_layout.addWidget(container_formulario)
 
         caja_central.addLayout(self.stack_layout)
         caja_central.addLayout(boton_color_cambio)
