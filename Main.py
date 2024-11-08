@@ -3,7 +3,7 @@ import random
 
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QPushButton, QWidget,
-                              QStackedLayout)
+                             QStackedLayout, QTabWidget)
 
 from CajaColor import CajaColor
 from DatosFormulario import DatosWidget
@@ -20,12 +20,14 @@ class MainWindow(QMainWindow):
         self.setPalette(paleta)
 
         caja_central = QVBoxLayout()
-        caja_Formulario = QVBoxLayout()
+        caja_Formulario_QWidget = QWidget()
 
+        caja_formulario_layout  = QVBoxLayout()
         datos_widget = DatosWidget()
         botones_widget = Botones()
         boton_color_cambio = boton_color()
 
+        '''
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
         boton_color_cambio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
@@ -33,40 +35,36 @@ class MainWindow(QMainWindow):
         boton_color_cambio.button_cambio_rosa.clicked.connect(self.cambioRosa)
         boton_color_cambio.button_cambio_gris.clicked.connect(self.cambioGris)
         boton_color_cambio.button_cambio_blanco.clicked.connect(self.cambioBlanco)
-        boton_color_cambio.button_formulario.clicked.connect(self.cambioForm)
-
-        caja_Formulario.addLayout(datos_widget)
-        caja_Formulario.addLayout(botones_widget)
+        boton_color_cambio.button_formulario.clicked.connect(self.cambioForm) 
+        '''
 
 
-        self.stack_layout = QStackedLayout()
-        self.stack_layout.addWidget(CajaColor("red"))
-        self.stack_layout.addWidget(CajaColor("blue"))
-        self.stack_layout.addWidget(CajaColor("orange"))
-        self.stack_layout.addWidget(CajaColor("yellow"))
-        self.stack_layout.addWidget(CajaColor("pink"))
-        self.stack_layout.addWidget(CajaColor("gray"))
-        self.stack_layout.addWidget(CajaColor("white"))
-        containerFormulario = QWidget()
+        caja_formulario_layout.addLayout(datos_widget)
+        caja_formulario_layout.addLayout(botones_widget)
+        caja_Formulario_QWidget.setLayout(caja_formulario_layout)
 
 
+        self.tab_layout = QTabWidget(self)
+        self.tab_layout.addTab(CajaColor("red"), "rojo")
+        self.tab_layout.addTab(CajaColor("blue"), "azul")
+        self.tab_layout.addTab(CajaColor("orange"), "naranja")
+        self.tab_layout.addTab(CajaColor("yellow"), "amarillo")
+        self.tab_layout.addTab(CajaColor("pink"), "rosa")
+        self.tab_layout.addTab(CajaColor("gray"), "gris")
+        self.tab_layout.addTab(CajaColor("white"), "blanco")
+        self.tab_layout.addTab(caja_Formulario_QWidget, 'Datos')
 
-        containerFormulario.setLayout(caja_Formulario)
-        self.stack_layout.addWidget(containerFormulario)
 
-        caja_central.addLayout(self.stack_layout)
+        caja_central.addWidget(self.tab_layout)
         caja_central.addLayout(boton_color_cambio)
 
-
-
-
-        self.stack_layout.setCurrentIndex(1)
 
         container = QWidget()
         container.setLayout(caja_central)
         self.setCentralWidget(container)
         self.show()
 
+'''
     def cambioRojo(self):
         self.stack_layout.setCurrentIndex(0)
 
@@ -90,6 +88,9 @@ class MainWindow(QMainWindow):
 
     def cambioForm(self):
         self.stack_layout.setCurrentIndex(7)
+
+'''
+
 
 
 
