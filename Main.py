@@ -45,6 +45,7 @@ class MainWindow(QMainWindow):
 
 
         self.tab_layout = QTabWidget(self)
+        self.tab_layout.setTabPosition(QTabWidget.TabPosition.South) #Modificar posicionamiento de cambios de pagina
         self.tab_layout.addTab(CajaColor("red"), "rojo")
         self.tab_layout.addTab(CajaColor("blue"), "azul")
         self.tab_layout.addTab(CajaColor("orange"), "naranja")
