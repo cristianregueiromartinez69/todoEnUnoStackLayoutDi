@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         caja_formulario_layout  = QVBoxLayout()
         datos_widget = DatosWidget()
         botones_widget = Botones()
-        boton_color_cambio = boton_color()
+        #boton_color_cambio = boton_color()
 
         '''
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
@@ -56,7 +56,7 @@ class MainWindow(QMainWindow):
 
 
         caja_central.addWidget(self.tab_layout)
-        caja_central.addLayout(boton_color_cambio)
+        #caja_central.addLayout(boton_color_cambio)
 
 
         container = QWidget()
