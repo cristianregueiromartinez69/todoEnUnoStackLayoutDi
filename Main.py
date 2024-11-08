@@ -1,14 +1,14 @@
 import sys
-import random
+#import random
 
 from PyQt6.QtGui import QPalette, QColor
-from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QPushButton, QWidget,
-                             QStackedLayout, QTabWidget)
+from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,
+                             QTabWidget)
 
 from CajaColor import CajaColor
 from DatosFormulario import DatosWidget
 from BotonesFormulario import Botones
-from Botones_colores import boton_color
+#from Botones_colores import boton_color
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
         self.setPalette(paleta)
 
         caja_central = QVBoxLayout()
-        caja_Formulario_QWidget = QWidget()
+        caja_formulario_q_widget = QWidget()
 
         caja_formulario_layout  = QVBoxLayout()
         datos_widget = DatosWidget()
@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
 
         caja_formulario_layout.addLayout(datos_widget)
         caja_formulario_layout.addLayout(botones_widget)
-        caja_Formulario_QWidget.setLayout(caja_formulario_layout)
+        caja_formulario_q_widget.setLayout(caja_formulario_layout)
 
 
         self.tab_layout = QTabWidget(self)
@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         self.tab_layout.addTab(CajaColor("pink"), "rosa")
         self.tab_layout.addTab(CajaColor("gray"), "gris")
         self.tab_layout.addTab(CajaColor("white"), "blanco")
-        self.tab_layout.addTab(caja_Formulario_QWidget, 'Datos')
+        self.tab_layout.addTab(caja_formulario_q_widget, 'Datos')
 
 
         caja_central.addWidget(self.tab_layout)
