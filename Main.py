@@ -1,4 +1,5 @@
 import sys
+from lib2to3.pygram import pattern_symbols
 
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,
@@ -29,7 +30,7 @@ class MainWindow(QMainWindow):
 
         boton_color_cambio_radio = BotonRadio()
 
-        boton_color_cambio_check = ChechButton()
+        self.boton_color_cambio_check = ChechButton()
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
@@ -53,15 +54,15 @@ class MainWindow(QMainWindow):
         boton_color_cambio_radio.button_cambio_blanco.clicked.connect(self.cambioBlanco)
         boton_color_cambio_radio.button_formulario.clicked.connect(self.cambioForm)
 
-        boton_color_cambio_check.button_cambio_rojo.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_rojo.setChecked(True)  # Metodo para hacer que un boton esté presionando en el momento de iniciar la aplicación
-        boton_color_cambio_check.button_cambio_azul.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_naranja.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_amarillo.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_rosa.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_gris.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_cambio_blanco.clicked.connect(self.setColoresCheck)
-        boton_color_cambio_check.button_formulario.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_rojo.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_rojo.setChecked(True)  # Metodo para hacer que un boton esté presionando en el momento de iniciar la aplicación
+        self.boton_color_cambio_check.button_cambio_azul.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_naranja.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_amarillo.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_rosa.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_gris.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_cambio_blanco.clicked.connect(self.setColoresCheck)
+        self.boton_color_cambio_check.button_formulario.clicked.connect(self.setColoresCheck)
 
         self.stack_layout = QStackedLayout()
         self.stack_layout.addWidget(CajaColor("red"))
@@ -81,7 +82,7 @@ class MainWindow(QMainWindow):
         caja_central.addLayout(self.stack_layout)
         caja_central.addLayout(boton_color_cambio)
         caja_central.addLayout(boton_color_cambio_radio)
-        caja_central.addLayout(boton_color_cambio_check)
+        caja_central.addLayout(self.boton_color_cambio_check)
 
 
 
@@ -118,7 +119,25 @@ class MainWindow(QMainWindow):
         self.stack_layout.setCurrentIndex(7)
 
     def setColoresCheck(self):
-        pass
+        if self.boton_color_cambio_check.button_cambio_rojo.isChecked():
+            self.stack_layout.setCurrentIndex(0)
+        elif self.boton_color_cambio_check.button_cambio_azul.isChecked():
+            self.stack_layout.setCurrentIndex(1)
+        elif self.boton_color_cambio_check.button_cambio_naranja.isChecked():
+            self.stack_layout.setCurrentIndex(2)
+        elif self.boton_color_cambio_check.button_cambio_amarillo.isChecked():
+            self.stack_layout.setCurrentIndex(3)
+        elif self.boton_color_cambio_check.button_cambio_rosa.isChecked():
+            self.stack_layout.setCurrentIndex(4)
+        elif self.boton_color_cambio_check.button_cambio_gris.isChecked():
+            self.stack_layout.setCurrentIndex(5)
+        elif self.boton_color_cambio_check.button_cambio_blanco.isChecked():
+            self.stack_layout.setCurrentIndex(6)
+        elif self.boton_color_cambio_check.button_formulario.isChecked():
+            self.stack_layout.setCurrentIndex(7)
+
+
+
 
 
 
