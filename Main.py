@@ -146,23 +146,8 @@ class MainWindow(QMainWindow):
             self.stack_layout.setCurrentIndex(7)
 
 
-    def cambioColoresCombo(self):
-        if self.comboColores.currentIndex() == 0:
-            self.stack_layout.setCurrentIndex(0)
-        elif self.comboColores.currentIndex() == 1:
-            self.stack_layout.setCurrentIndex(1)
-        elif self.comboColores.currentIndex() == 2:
-            self.stack_layout.setCurrentIndex(2)
-        elif self.comboColores.currentIndex() == 3:
-            self.stack_layout.setCurrentIndex(3)
-        elif self.comboColores.currentIndex() == 4:
-            self.stack_layout.setCurrentIndex(4)
-        elif self.comboColores.currentIndex() == 5:
-            self.stack_layout.setCurrentIndex(5)
-        elif self.comboColores.currentIndex() == 6:
-            self.stack_layout.setCurrentIndex(6)
-        elif self.comboColores.currentIndex() == 7:
-            self.stack_layout.setCurrentIndex(7)
+    def cambioColoresCombo(self, indice):
+        self.stack_layout.setCurrentIndex(indice)
 
 
 
