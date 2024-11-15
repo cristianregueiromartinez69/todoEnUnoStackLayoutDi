@@ -34,6 +34,7 @@ class MainWindow(QMainWindow):
 
         comboColores = QComboBox() #despliegue de layout combobox
         comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
+        comboColores.setCurrentIndex(0)
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
@@ -79,6 +80,8 @@ class MainWindow(QMainWindow):
 
 
 
+
+
         container_formulario.setLayout(caja_formulario)
         self.stack_layout.addWidget(container_formulario)
 
@@ -86,6 +89,7 @@ class MainWindow(QMainWindow):
         caja_central.addLayout(boton_color_cambio)
         caja_central.addLayout(boton_color_cambio_radio)
         caja_central.addLayout(self.boton_color_cambio_check)
+        caja_central.addWidget(comboColores)
 
 
 
