@@ -33,6 +33,7 @@ class MainWindow(QMainWindow):
         self.boton_color_cambio_check = ChechButton()
 
         comboColores = QComboBox() #despliegue de layout combobox
+        comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
