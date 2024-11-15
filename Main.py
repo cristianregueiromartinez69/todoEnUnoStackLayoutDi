@@ -32,9 +32,9 @@ class MainWindow(QMainWindow):
 
         self.boton_color_cambio_check = ChechButton()
 
-        comboColores = QComboBox() #despliegue de layout combobox
-        comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
-        comboColores.setCurrentIndex(0)
+        self.comboColores = QComboBox() #despliegue de layout combobox
+        self.comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
+        self.comboColores.setCurrentIndex(0)
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
         caja_central.addLayout(boton_color_cambio)
         caja_central.addLayout(boton_color_cambio_radio)
         caja_central.addLayout(self.boton_color_cambio_check)
-        caja_central.addWidget(comboColores)
+        caja_central.addWidget(self.comboColores)
 
 
 
@@ -142,6 +142,26 @@ class MainWindow(QMainWindow):
             self.stack_layout.setCurrentIndex(6)
         elif self.boton_color_cambio_check.button_formulario.isChecked():
             self.stack_layout.setCurrentIndex(7)
+
+
+    def cambioColoresCombo(self):
+        if self.comboColores.currentIndex() == 0:
+            self.stack_layout.setCurrentIndex(0)
+        elif self.comboColores.currentIndex() == 1:
+            self.stack_layout.setCurrentIndex(1)
+        elif self.comboColores.currentIndex() == 2:
+            self.stack_layout.setCurrentIndex(2)
+        elif self.comboColores.currentIndex() == 3:
+            self.stack_layout.setCurrentIndex(3)
+        elif self.comboColores.currentIndex() == 4:
+            self.stack_layout.setCurrentIndex(4)
+        elif self.comboColores.currentIndex() == 5:
+            self.stack_layout.setCurrentIndex(5)
+        elif self.comboColores.currentIndex() == 6:
+            self.stack_layout.setCurrentIndex(6)
+        elif self.comboColores.currentIndex() == 7:
+            self.stack_layout.setCurrentIndex(7)
+
 
 
 
