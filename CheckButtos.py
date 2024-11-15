@@ -9,7 +9,7 @@ from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QPushButton
                              QHBoxLayout, QCheckBox, QRadioButton)
 
 
-class RadioButton(QHBoxLayout):
+class ChechButton(QHBoxLayout):
     def __init__(self):
         super().__init__()
 

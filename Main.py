@@ -9,6 +9,7 @@ from DatosFormulario import DatosWidget
 from BotonesFormulario import Botones
 from Botones_colores import boton_color
 from RadioButtons import BotonRadio
+from CheckButtos import ChechButton
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -27,6 +28,8 @@ class MainWindow(QMainWindow):
         boton_color_cambio = boton_color()
 
         boton_color_cambio_radio = BotonRadio()
+
+        boton_color_cambio_check = ChechButton()
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
@@ -68,6 +71,7 @@ class MainWindow(QMainWindow):
         caja_central.addLayout(self.stack_layout)
         caja_central.addLayout(boton_color_cambio)
         caja_central.addLayout(boton_color_cambio_radio)
+        caja_central.addLayout(boton_color_cambio_check)
 
 
 
