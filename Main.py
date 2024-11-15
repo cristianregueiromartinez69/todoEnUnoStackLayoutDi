@@ -36,6 +36,8 @@ class MainWindow(QMainWindow):
         self.comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
         self.comboColores.setCurrentIndex(0)
 
+        self.comboColores.currentIndexChanged.connect(self.cambioColoresCombo)
+
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
         boton_color_cambio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
