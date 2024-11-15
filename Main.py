@@ -3,7 +3,7 @@ from lib2to3.pygram import pattern_symbols
 
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,
-                              QStackedLayout)
+                             QStackedLayout, QComboBox)
 
 from CajaColor import CajaColor
 from DatosFormulario import DatosWidget
@@ -31,6 +31,8 @@ class MainWindow(QMainWindow):
         boton_color_cambio_radio = BotonRadio()
 
         self.boton_color_cambio_check = ChechButton()
+
+        comboColores = QComboBox() #despliegue de layout combobox
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
