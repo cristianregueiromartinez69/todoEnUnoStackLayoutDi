@@ -1,5 +1,4 @@
 import sys
-from lib2to3.pygram import pattern_symbols
 
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,
@@ -33,10 +32,11 @@ class MainWindow(QMainWindow):
         self.boton_color_cambio_check = ChechButton()
 
         self.comboColores = QComboBox() #despliegue de layout combobox
-        self.comboColores.addItems(["Red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
+        self.comboColores.addItems(["red", "blue", "orange", "yellow", "pink", "green", "white", "form"])
         self.comboColores.setCurrentIndex(0)
 
         self.comboColores.currentIndexChanged.connect(self.cambioColoresCombo)
+        self.comboColores.currentTextChanged.connect(self.cambioColoresComboText)
 
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
@@ -148,6 +148,24 @@ class MainWindow(QMainWindow):
 
     def cambioColoresCombo(self, indice):
         self.stack_layout.setCurrentIndex(indice)
+
+    def cambioColoresComboText(self, texto):
+        if texto == "red":
+            self.stack_layout.setCurrentIndex(0)
+        elif texto == "blue":
+            self.stack_layout.setCurrentIndex(1)
+        elif texto == "orange":
+            self.stack_layout.setCurrentIndex(2)
+        elif texto == "yellow":
+            self.stack_layout.setCurrentIndex(3)
+        elif texto == "pink":
+            self.stack_layout.setCurrentIndex(4)
+        elif texto == "gray":
+            self.stack_layout.setCurrentIndex(5)
+        elif texto == "white":
+            self.stack_layout.setCurrentIndex(6)
+        elif texto == "form":
+            self.stack_layout.setCurrentIndex(7)
 
 
 
