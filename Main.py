@@ -38,6 +38,8 @@ class MainWindow(QMainWindow):
         self.comboColores.currentIndexChanged.connect(self.cambioColoresCombo)
         self.comboColores.currentTextChanged.connect(self.cambioColoresComboText)
 
+        self.comboColores.setEditable(True)
+
         boton_color_cambio.button_cambio_rojo.clicked.connect(self.cambioRojo)
         boton_color_cambio.button_cambio_azul.clicked.connect(self.cambioAzul)
         boton_color_cambio.button_cambio_naranja.clicked.connect(self.cambioNaranja)
